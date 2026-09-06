@@ -7,7 +7,7 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="flex-col flex md:mt-0 mt-6 md:flex-row justify-between items-center h-screen px-[20px] gap-y-[20px] text-left">
+    <div id="login-page" class="flex-col flex md:mt-0 mt-6 md:flex-row justify-between items-center h-screen px-[20px] gap-y-[20px] text-left">
         <div class="flex flex-col justify-between gap-y-[20px] text-left">
             <h1 class="font-bold text-7xl text-left"><span class="text-blue-500">English</span> is Easy!!</h1>
             <p>
@@ -18,22 +18,26 @@
             
             <form class="flex flex-col md:items-start items-center py-[10px] gap-y-[10px]" action="">
                 <div class="flex relative">
-                    <input class="border w-[200px] rounded-[5px] placeholder:text-center" type="text" placeholder="Username">
+                    <input id="username" class="text-center border w-[200px] rounded-[5px] placeholder:text-center" type="text" placeholder="Username">
                     <svg class="relative right-48 top-1.5" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 18V15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.0693 2.81985L3.13929 8.36985C2.35929 8.98985 1.85929 10.2998 2.02929 11.2798L3.35929 19.2398C3.59929 20.6598 4.95929 21.8098 6.39929 21.8098H17.5993C19.0293 21.8098 20.3993 20.6498 20.6393 19.2398L21.9693 11.2798C22.1293 10.2998 21.6293 8.98985 20.8593 8.36985L13.9293 2.82985C12.8593 1.96985 11.1293 1.96985 10.0693 2.81985Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div>
 
                 <div class="flex relative">
-                    <input class="border w-[200px] rounded-[5px] placeholder:text-center" type="password" placeholder="Password">
+                    <input id="password" class="text-center border w-[200px] rounded-[5px] placeholder:text-center" type="password" placeholder="Password">
                     <svg class="relative right-48 top-1.5" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 18V15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.0693 2.81985L3.13929 8.36985C2.35929 8.98985 1.85929 10.2998 2.02929 11.2798L3.35929 19.2398C3.59929 20.6598 4.95929 21.8098 6.39929 21.8098H17.5993C19.0293 21.8098 20.3993 20.6498 20.6393 19.2398L21.9693 11.2798C22.1293 10.2998 21.6293 8.98985 20.8593 8.36985L13.9293 2.82985C12.8593 1.96985 11.1293 1.96985 10.0693 2.81985Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div>
             </form>
             <div class="flex md:justify-start md:mr-0 mr-5 justify-center">
-            <button class="bg-blue-600 text-white font-bold text-[12px] mt-[10px] w-[80px] h-[30px] rounded-[5px]">Get started</button>
+            <button id="get-started" class="bg-blue-600 hover:bg-blue-400 text-white font-bold text-[12px] mt-[10px] w-[80px] h-[30px] rounded-[5px]">Get started</button>
             </div>
         </div>
         <div>
             <img class="w-[400px] h-auto" src="https://english-janala-web11-2729.surge.sh/assets/hero-student.png" alt="">
         </div>
+    </div>
+
+    <div id="dashboard" class="" hidden>
+        <h1>fuck u</h1>
     </div>
 
   </body>
