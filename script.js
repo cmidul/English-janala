@@ -23,10 +23,36 @@ async function loadLessons() {
     container.innerHTML = '';
 
     lessons.forEach(lesson => {
-        container.innerHTML += `<button data-level="${lesson.level_no}" class="border flex justify-center items-center gap-[10px] rounded-[5px] text-blue-500 font-semibold hover:bg-blue-600 hover:text-white w-[100px] h-[40px] "><img class="size-[15px]" src="images/fa-book-open.png" alt="">Lesson ${lesson.level_no}</button>`;
+        container.innerHTML += `<button id="${lesson.level_no}" data-level="${lesson.level_no}" class="lesson-card border flex justify-center items-center gap-[10px] rounded-[5px] text-blue-500 font-semibold hover:bg-blue-600 hover:text-white w-[100px] h-[40px] "><img class="size-[15px]" src="images/fa-book-open.png" alt="">Lesson ${lesson.level_no}</button>`;
     });
     
 }
 
 loadLessons();
+
+async function loadWords(Id) {
+    const response = await fetch(
+      `https://openapi.programming-hero.com/api/level/${Id}`,
+    );
+    const data = await response.json();
+    const words = data.data;
+    const wordContainer = document.getElementById('word-container');
+    wordContainer.innerHTML = '';
+    words.forEach(word =>{
+        wordContainer.innerHTML += `<div class="bg-white shadow-xl rounded-[10px] size-[300px] md:size-[400px] text-center flex flex-col gap-y-5 justify-center items-center">
+                                        <h3 class="text-3xl font-semibold">${word.word}</h3>
+                                        <p class="text-2xl font-semibold">Meaning / Pronunciation</p>
+                                        <h1 class="text-2xl font-semibold">${word.meaning} / ${word.pronunciation}</h1>
+                                    </div>`;
+    });
+}
+
+const lessonContainer = document.getElementById('lesson-container');
+lessonContainer.addEventListener('click',function(e){
+    const clickedButton = e.target.closest('button');
+    if(!clickedButton) return;
+    const levelId = clickedButton.dataset.level;
+    loadWords(levelId);
+})
+
 
