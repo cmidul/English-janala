@@ -39,10 +39,14 @@ async function loadWords(Id) {
     const wordContainer = document.getElementById('word-container');
     wordContainer.innerHTML = '';
     words.forEach(word =>{
-        wordContainer.innerHTML += `<div class="bg-white shadow-xl rounded-[10px] size-[300px] md:size-[400px] text-center flex flex-col gap-y-5 justify-center items-center">
+        wordContainer.innerHTML += `<div class="bg-white shadow-xl rounded-[10px] size-[250px] md:size-[300px] text-center flex flex-col gap-y-5 justify-center items-center">
                                         <h3 class="text-3xl font-semibold">${word.word}</h3>
                                         <p class="text-2xl font-semibold">Meaning / Pronunciation</p>
-                                        <h1 class="text-2xl font-semibold">${word.meaning} / ${word.pronunciation}</h1>
+                                        <h1 class="text-xl font-semibold">${word.meaning} / ${word.pronunciation}</h1>
+                                        <div class="flex justify-between w-[240px]">
+                                            <button class="size-[40px] bg-blue-100 hover:shadow-xl rounded-md flex items-center justify-center"><img class="size-[30px]" src="images/info.svg" alt=""></button>
+                                            <button class="size-[40px] bg-blue-100 hover:shadow-xl rounded-md flex items-center justify-center"><img class="size-[30px]" src="images/sound.svg" alt=""></button>
+                                        </div>
                                     </div>`;
     });
 }
