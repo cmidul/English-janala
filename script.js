@@ -9,8 +9,11 @@ submit.addEventListener('click', function(){
     if(username.value === name && password.value === pass){
         document.querySelector('#login-page').hidden = true;
         document.querySelector('#dashboard').hidden = false;
+        document.getElementById("welcome_modal").showModal();
     }
 })
+
+
 
 async function loadLessons() {
     const response = await fetch(

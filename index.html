@@ -36,6 +36,16 @@
         </div>
     </div>
 
+    <!-- popup -->
+    <dialog id="welcome_modal" class="absolute left-[50px] md:left-[490px] top-[250px] modal rounded-[20px] h-[150px]">
+        <div class="modal-box text-center w-[300px] pt-[20px]">
+            <h3 class="text-2xl font-semibold">অভিনন্দন!</h3>
+            <p class="py-4">চলুন আজ নতুন কিছু শেখা যাক</p>
+            <button class="btn btn-primary bg-blue-400 w-[50px] rounded-sm" onclick="this.closest('dialog').close()">OK</button>
+        </div>
+    </dialog>
+
+    <!-- dashboard -->
     <section id="dashboard" class="" hidden>
         <header class="flex justify-between border p-[20px] bg-white sticky">
             <div class="flex items-center">
@@ -57,7 +67,7 @@
             </div>
         </div>
 
-        <div id="word-container" class="grid grid-cols-1 md:grid-cols-3 mx-[60px] mt-[40px] gap-y-[20px] bg-gray-100 justify-items-center pt-[50px]">
+        <div id="word-container" class="grid grid-cols-1 md:grid-cols-3 md:mx-[60px] mt-[40px] gap-y-[20px] bg-gray-100 justify-items-center pt-[50px]">
 
         </div>
 
