@@ -62,4 +62,48 @@ lessonContainer.addEventListener('click',function(e){
     loadWords(levelId);
 })
 
+const faq1 = document.getElementById('faq1');
+const mfaq1 = document.getElementById('mfaq1');
+faq1.addEventListener('click', function(){
+    document.getElementById('faq1').hidden = true;
+    document.getElementById('mfaq1').hidden = false;
+})
+mfaq1.addEventListener("click", function () {
+  document.getElementById("mfaq1").hidden = true;
+  document.getElementById("faq1").hidden = false;
+});
+
+const faq2 = document.getElementById("faq2");
+const mfaq2 = document.getElementById("mfaq2");
+faq2.addEventListener("click", function () {
+  document.getElementById("faq2").hidden = true;
+  document.getElementById("mfaq2").hidden = false;
+});
+mfaq2.addEventListener("click", function () {
+  document.getElementById("mfaq2").hidden = true;
+  document.getElementById("faq2").hidden = false;
+});
+
+const faq3 = document.getElementById("faq3");
+const mfaq3 = document.getElementById("mfaq3");
+faq3.addEventListener("click", function () {
+  document.getElementById("faq3").hidden = true;
+  document.getElementById("mfaq3").hidden = false;
+});
+mfaq3.addEventListener("click", function () {
+  document.getElementById("mfaq3").hidden = true;
+  document.getElementById("faq3").hidden = false;
+});
+
+const faq4 = document.getElementById("faq4");
+const mfaq4 = document.getElementById("mfaq4");
+faq4.addEventListener("click", function () {
+  document.getElementById("faq4").hidden = true;
+  document.getElementById("mfaq4").hidden = false;
+});
+mfaq4.addEventListener("click", function () {
+  document.getElementById("mfaq4").hidden = true;
+  document.getElementById("faq4").hidden = false;
+});
+
 
