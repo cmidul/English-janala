@@ -11,7 +11,15 @@ submit.addEventListener('click', function(){
         document.querySelector('#dashboard').hidden = false;
         document.getElementById("welcome_modal").showModal();
     }
+
 })
+
+const logout = document.getElementById("logout");
+logout.addEventListener("click", function () {
+  document.querySelector("#login-page").hidden = false;
+  document.querySelector("#dashboard").hidden = true;
+});
+
 
 
 
@@ -47,20 +55,56 @@ async function loadWords(Id) {
                                         <p class="text-2xl font-semibold">Meaning / Pronunciation</p>
                                         <h1 class="text-xl font-semibold">${word.meaning} / ${word.pronunciation}</h1>
                                         <div class="flex justify-between w-[240px]">
-                                            <button class="size-[40px] bg-blue-100 hover:shadow-xl rounded-md flex items-center justify-center"><img class="size-[30px]" src="images/info.svg" alt=""></button>
+                                            <button data-id="${word.id}" class="info-btn size-[40px] bg-blue-100 hover:shadow-xl rounded-md flex items-center justify-center"><img class="size-[30px]" src="images/info.svg" alt=""></button>
                                             <button class="size-[40px] bg-blue-100 hover:shadow-xl rounded-md flex items-center justify-center"><img class="size-[30px]" src="images/sound.svg" alt=""></button>
                                         </div>
                                     </div>`;
     });
 }
 
-const lessonContainer = document.getElementById('lesson-container');
-lessonContainer.addEventListener('click',function(e){
-    const clickedButton = e.target.closest('button');
-    if(!clickedButton) return;
-    const levelId = clickedButton.dataset.level;
-    loadWords(levelId);
+const lessonContainer = document.getElementById("lesson-container");
+lessonContainer.addEventListener("click", function (e) {
+  const clickedButton = e.target.closest("button");
+  if (!clickedButton) return;
+  const levelId = clickedButton.dataset.level;
+  loadWords(levelId);
+});
+
+// word details pop up 
+
+const wordContainer = document.getElementById("word-container");
+
+wordContainer.addEventListener("click", async (e) => {
+  const clickedButton = e.target.closest(".info-btn");
+  if (!clickedButton) return;
+
+  const id = clickedButton.dataset.id;
+  const res = await fetch(
+    `https://openapi.programming-hero.com/api/word/${id}`,
+  );
+  const data = await res.json();
+  const word = data.data;
+
+  document.getElementById("modalWord").innerText = word.word;
+  document.getElementById("modalMeaning").innerText = word.meaning;
+  document.getElementById("modalPronunciation").innerText = word.pronunciation;
+  document.getElementById("modalExample").innerText = word.sentence;
+
+  document.getElementById("wordModal").hidden = false;
+});
+
+
+const wordModal = document.getElementById("wordModal");
+wordModal.addEventListener("click", async (e) =>{
+  const closeinfo = e.target.closest(".closeModalBtn");
+  if(!closeinfo) return;
+  document.getElementById("wordModal").hidden = true;
 })
+
+
+
+
+// faq buttons
 
 const faq1 = document.getElementById('faq1');
 const mfaq1 = document.getElementById('mfaq1');
