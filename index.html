@@ -61,7 +61,7 @@
             <div class="md:flex justify-between px-10 mx-5 gap-5 w-[35%] hidden">
                 <button class="border flex items-center justify-center gap-[10%] w-[45%] border-blue-600 rounded-[5px] hover:bg-blue-500 hover:text-white"><img class="size-[12px]" src="images/fa-book-open.png" alt="">FAQ</button>
                 <button class="border flex items-center justify-center gap-[10%] w-[45%] border-blue-600 rounded-[5px] hover:bg-blue-500 hover:text-white"><img class="size-[12px]" src="images/fa-book-open.png" alt="">LEARN</button>
-                <button class="border flex items-center justify-center gap-[10%] w-[45%] border-blue-600 rounded-[5px] hover:bg-blue-500 hover:text-white"><img class="size-[12px]" src="images/fa-book-open.png" alt="">LOGOUT</button>
+                <button id="logout" class="border flex items-center justify-center gap-[10%] w-[45%] border-blue-600 rounded-[5px] hover:bg-blue-500 hover:text-white"><img class="size-[12px]" src="images/fa-book-open.png" alt="">LOGOUT</button>
             </div>
         </header>
         
@@ -73,8 +73,21 @@
         </div>
 
         <!-- words from api -->
-        <div id="word-container" class="grid grid-cols-1 md:grid-cols-3 md:mx-[60px] mt-[40px] gap-y-[20px] bg-gray-100 justify-items-center pt-[50px]">
+        <div id="word-container" class="grid grid-cols-1 md:grid-cols-3 md:mx-[60px] md:py-[60px] mt-[40px] gap-y-[20px] bg-gray-100 justify-items-center pt-[50px]">
 
+        </div>
+
+        <div id="wordModal" hidden class="fixed inset-0 bg-black/50 flex items-center justify-center">
+            <div class="bg-white flex flex-col justify-center p-6 rounded-lg w-[400px] h-[350px]">
+                <h2 id="modalWord" class="font-semibold text-2xl"></h2>
+                <span class="block font-semibold pt-[15px]">Meaning :</span>
+                <p id="modalMeaning"></p>
+                <span class="block font-semibold pt-[15px]">Pronunciation :</span>
+                <p id="modalPronunciation"></p>
+                <span class="block font-semibold pt-[15px]">Example :</span>
+                <p id="modalExample" class=""></p>
+                <button class="mt-[50px] closeModalBtn border w-[100px] bg-blue-500 text-white font-semibold hover:border-blue-800 rounded-md">Close</button>
+            </div>
         </div>
 
         <!-- FAQ -->
@@ -101,6 +114,28 @@
                 <p class="text-left w-[1300px] px-[20px]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis repellat possimus<br> a quae, nisi officia maxime laborum sequi blanditiis consequatur sunt?</p>
             </div>
 
+        </div>
+
+
+        <!-- dashboard footer  -->
+        <div class="flex justify-between px-[50px] items-center my-[50px]">
+            <div class="flex flex-col gap-y-[20px]">
+                <div class="flex items-center">
+                    <h1 class=" text-2xl">ENGLISH</h1>
+                    <img src="images/logo.png" alt="">
+                    <h1 class=" text-2xl font-semibold">জানালা</h1>
+                </div>
+                <p class="font-semibold text-[12px]">ইংরেজি শিখুন সহজে</p>
+                <p class="font-semibold text-[12px]">Providing ED-Tech Applications since 2025</p>
+            </div>
+            <div class="flex flex-col gap-y-[10px] justify-center">
+                <h1 class="font-semibold">Follow us</h1>
+                <div class="flex justify-between gap-x-[10px]">
+                    <img width="40" height="30" src="images/fb.svg" alt="">
+                    <img width="40" height="30" src="images/yt.svg" alt="">
+                    <img width="40" height="30" src="images/insta.svg" alt="">
+                </div>
+            </div>
         </div>
 
         
